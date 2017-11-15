@@ -4,7 +4,9 @@ Created on 14th Nov '17
 """
 import django
 from os.path import dirname, abspath, join
-
+import os
+os.environ["PYTHONPATH"] = os.getcwd()
+os.environ["DJANGO_SETTINGS_VARIABLE"] = 'app_db.settings.local'
 from django.conf import settings
 from django.db import close_old_connections
 from flask import Flask

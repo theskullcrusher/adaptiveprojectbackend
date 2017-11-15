@@ -12,7 +12,7 @@ from app_service.service_api_handlers import \
 from app_service.utils.resource import Resource
 from app_service.utils.auth import get_user
 
-class UpdateCheatSheet(Resource):
+class GetCheatSheets(Resource):
 	""" 
 	This class gets all cheatsheets
 	"""
