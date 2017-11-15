@@ -11,7 +11,7 @@ from django import db
 from django.db import close_old_connections
 from django.contrib.auth.models import User
 from app_service.utils.auth import get_user
-from app_db.ap_models.models import *
+from app_db.app_models.models import *
 import ast
 import json
 import pdb

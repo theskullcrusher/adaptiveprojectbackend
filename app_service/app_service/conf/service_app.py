@@ -15,6 +15,10 @@ from app_service.conf.config_logger_setup import setup_config_logger
 from app_service.session.interfaces import DBInterface
 from app_service.service_apis.uservalidation import UserValidation
 from app_service.service_apis.usercreation import UserCreation
+from app_service.service_apis.getcheatsheets import GetCheatSheets
+from app_service.service_apis.updatecheatsheet import UpdateCheatSheet
+from app_service.service_apis.createcheatsheet import CreateCheatSheet
+from app_service.service_apis.deletecheatsheet import DeleteCheatSheet
 
 from flask.ext.cors import CORS
  
@@ -35,6 +39,10 @@ app.logger.info("Setting up Resources")
 
 api.add_resource(UserCreation, '/userservice/create/')
 api.add_resource(UserValidation,'/userservice/uservalidation/')
+api.add_resource(GetCheatSheets,'/cardservice/getallcards/')
+api.add_resource(UpdateCheatSheet,'/cardservice/updatecard/')
+api.add_resource(DeleteCheatSheet,'/cardservice/deletecard/')
+api.add_resource(CreateCheatSheet,'/cardservice/createcard/')
 
 app.logger.info("Resource setup done")
 
