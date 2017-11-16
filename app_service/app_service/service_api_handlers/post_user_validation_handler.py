@@ -42,7 +42,7 @@ def handle_request(username, password, remember_me):
 							username)
 			return {
 				'content': {
-					'name': user.username,
+					'username': user.username,
 					app.auth_header_name: session.get('key'),
 					'is_authorized': authorized
 				},

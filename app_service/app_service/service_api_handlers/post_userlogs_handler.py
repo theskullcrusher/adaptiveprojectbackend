@@ -29,7 +29,7 @@ def handle_request(data):
 			'message': '404 - No such cheatsheet found',
 			'status': 404
 		}
-		UserLogs.objects.create(user=user,card=card,action=data['action']).first()
+		UserLogs.objects.create(user=user,card=card,action=data['action'])
 		return {
 			'success': True,
 			'message': 'Successfully logged user activity',

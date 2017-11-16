@@ -43,7 +43,7 @@ setup_config_logger(app)
 
 app.logger.info("Setting up Resources")
 
-api.add_resource(UserCreation, '/userservice/create/')
+api.add_resource(UserCreation, '/userservice/createuser/')
 api.add_resource(UserValidation,'/userservice/uservalidation/')
 api.add_resource(GetCheatSheets,'/cardservice/getallcards/')
 api.add_resource(UpdateCheatSheet,'/cardservice/updatecard/')
