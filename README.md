@@ -12,6 +12,8 @@ export PYTHONPATH=$(pwd)
 2] API sample calls with outputs
 
 ###Please note that almost all input and return parameters are strings even if values are numbers (example: card ids or noofupvotes)
+#Replace localhost:7285 with domain ec2-18-221-144-47.us-east-2.compute.amazonaws.com
+
 
 2.1) POST http://localhost:7285/userservice/createuser/
 

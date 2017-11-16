@@ -6,8 +6,9 @@ SOCKFILE=/home/ubuntu/adaptiveprojectbackend/run/gunicorn.sock  # we will commun
 USER=ubuntu                                      # the user to run as
 GROUP=ubuntu                                     # the group to run as
 NUM_WORKERS=1                                     # how many worker processes should Gunicorn spawn
-DJANGO_SETTINGS_MODULE=app_db.settings.local            # which settings file should Django use
-DJANGO_WSGI_MODULE=app_db.settings.wsgi                     # WSGI module name
+DJANGO_SETTINGS_MODULE="app_db.settings.local"            # which settings file should Django use
+GUNICORN_MODULE=/home/ubuntu/adaptiveprojectbackend/app_service/app_service/conf/gunicorn.py # WSGI module name
+START_APP=/home/ubuntu/adaptiveprojectbackend/app_service/app_service/conf/service_app
 LOGS_FILE=/home/ubuntu/logs/django_logs
 
 echo "Starting $NAME as `whoami`"
@@ -24,10 +25,13 @@ test -d $RUNDIR || mkdir -p $RUNDIR
 
 # Start your Django Unicorn
 # Programs meant to be run under supervisor should not daemonize themselves (do not use --daemon)
-exec gunicorn ${DJANGO_WSGI_MODULE}:application \
-  --name $NAME \
-  --workers $NUM_WORKERS \
-  --user=$USER --group=$GROUP \
-  --bind=localhost:8000 \
-  --log-level=debug \
-  --log-file=$LOGS_FILE
+
+#exec gunicorn ${DJANGO_WSGI_MODULE}:application \
+#  --name $NAME \
+#  --workers $NUM_WORKERS \
+#  --user=$USER --group=$GROUP \
+#  --bind=localhost:7285 \
+#  --log-level=debug \
+#  --log-file=$LOGS_FILE
+
+exec gunicorn -c $GUNICORN_MODULE $STARTAPP:app

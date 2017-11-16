@@ -21,6 +21,7 @@ pexpect==4.0
 phonenumbers==7.1.0
 pickleshare==0.5
 ptyprocess==0.5
+psycopg2==2.7.3.2
 pyasn1==0.1.9
 pycparser==2.14
 pyOpenSSL==16.2.0
