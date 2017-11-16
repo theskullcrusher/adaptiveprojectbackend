@@ -27,7 +27,7 @@ def handle_request():
 
 		for card in cards:
 			c_dict = {}
-			c_dict['id'] = card.id
+			c_dict['id'] = str(card.id)
 			c_dict['title'] = card.title
 			c_dict['content'] = card.content
 			c_dict['upvotes'] = str(card.upvotes)

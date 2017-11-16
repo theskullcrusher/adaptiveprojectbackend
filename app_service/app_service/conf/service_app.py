@@ -21,6 +21,10 @@ from app_service.service_apis.getcheatsheets import GetCheatSheets
 from app_service.service_apis.updatecheatsheet import UpdateCheatSheet
 from app_service.service_apis.createcheatsheet import CreateCheatSheet
 from app_service.service_apis.deletecheatsheet import DeleteCheatSheet
+from app_service.service_apis.upvote import UpVote
+from app_service.service_apis.downvote import DownVote
+from app_service.service_apis.favorite import Favorite
+from app_service.service_apis.userlogs import UserLogs
 
 from flask.ext.cors import CORS
  
@@ -45,6 +49,10 @@ api.add_resource(GetCheatSheets,'/cardservice/getallcards/')
 api.add_resource(UpdateCheatSheet,'/cardservice/updatecard/')
 api.add_resource(DeleteCheatSheet,'/cardservice/deletecard/')
 api.add_resource(CreateCheatSheet,'/cardservice/createcard/')
+api.add_resource(UpVote,'/cardservice/upvote/')
+api.add_resource(DownVote,'/cardservice/downvote/')
+api.add_resource(Favorite,'/cardservice/favorite/')
+api.add_resource(UserLogs,'/cardservice/userlogs/')
 
 app.logger.info("Resource setup done")
 

@@ -18,7 +18,7 @@ import pdb
 
 def handle_request(data):
 	"""
-	  This method deletes a cheatsheet
+	  This method favorites a card
 	"""
 	try:
 		user = get_user()
@@ -29,19 +29,20 @@ def handle_request(data):
 			'message': '404 - No such cheatsheet found',
 			'status': 404
 		}
-		if card.owner == user:
-			card.delete()
-			return {
-				'success': True,
-				'message': 'Successfully deleted cheatsheet',
-				'status': 200
-			}
+		fav = Favorite.objects.filter(user=user,card=card).first()
+		if fav == None:
+			Favorite.objects.create(user=user,card=card)
+			favorite = True
+		else:
+			fav.delete()
+			favorite = False
 		return {
 			'success': True,
-			'message': 'Unauthorized - User is not an owner of cheatsheet - deletion not allowed',
-			'status': 401
+			'message': 'Successfully saved changes',
+			'favorite':favorite,
+			'id': str(data['id']),
+			'status': 200
 		}
-
 	except Exception as e:
 		app.logger.debug(e)
 		return {

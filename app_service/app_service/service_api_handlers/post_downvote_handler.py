@@ -18,7 +18,7 @@ import pdb
 
 def handle_request(data):
 	"""
-	  This method deletes a cheatsheet
+	  This method downvotes a card
 	"""
 	try:
 		user = get_user()
@@ -29,19 +29,13 @@ def handle_request(data):
 			'message': '404 - No such cheatsheet found',
 			'status': 404
 		}
-		if card.owner == user:
-			card.delete()
-			return {
-				'success': True,
-				'message': 'Successfully deleted cheatsheet',
-				'status': 200
-			}
+		card.downvotes = card.downvotes + 1
+		card.save()
 		return {
 			'success': True,
-			'message': 'Unauthorized - User is not an owner of cheatsheet - deletion not allowed',
-			'status': 401
+			'message': 'Successfully downvoted cheatsheet',
+			'status': 200
 		}
-
 	except Exception as e:
 		app.logger.debug(e)
 		return {

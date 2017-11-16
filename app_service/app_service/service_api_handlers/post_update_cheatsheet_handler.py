@@ -23,7 +23,7 @@ def handle_request(data):
 	try:
 		user = get_user()
 		tags = data['tags']
-		card = Cards.objects.filter(id=data['id']).first()
+		card = Cards.objects.filter(id=int(data['id'])).first()
 		if card == None:
 			return {
 				'success': True,
@@ -39,7 +39,7 @@ def handle_request(data):
 
 		card.title = data['title']
 		card.content = data['content']
-		card.c_type = data['type']
+		card.c_type = int(data['type'])
 		card.save()
 		if len(tags) != 0:
 			Tags.objects.filter(card=card).delete()
