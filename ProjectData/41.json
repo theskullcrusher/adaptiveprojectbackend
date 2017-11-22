@@ -1,0 +1,1 @@
+{"nId": "67", "userId": "5", "type": "1", "title": "UPDATE SQL", "content": "UPDATE table_nameSET column1=value1,column2=value2,...WHERE some_column=some_value;", "upVote": 0, "downVote": 0, "tags": ["SQL", "where"], "favorite": false, "dateCreated": "2017-11-20 03:23:10", "dateModified": "2017-11-20 03:23:10"}

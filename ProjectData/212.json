@@ -1,0 +1,1 @@
+{"nId": "278", "userId": "22", "type": "1", "title": "Date", "content": "<script>var d = new Date(\"October 13, 2014 11:13:00\");document.getElementById(\"demo\").innerHTML = d;</script>", "upVote": 0, "downVote": 0, "tags": ["Scala", "date"], "favorite": false, "dateCreated": "2017-11-20 03:27:05", "dateModified": "2017-11-20 03:27:05"}

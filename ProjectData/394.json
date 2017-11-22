@@ -1,0 +1,1 @@
+{"nId": "495", "userId": "35", "type": "1", "title": "112", "content": "CREATE TABLE CPI_study_log( log_id int NOT NULL AUTO_INCREMENT, user_id int(10) NOT NULL, begin_time timestamp, end_time timestamp);id # class .", "upVote": 0, "downVote": 0, "tags": ["SQL"], "favorite": false, "dateCreated": "2017-11-20 03:30:02", "dateModified": "2017-11-20 03:30:02"}

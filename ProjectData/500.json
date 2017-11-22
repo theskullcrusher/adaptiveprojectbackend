@@ -1,0 +1,1 @@
+{"nId": "625", "userId": "40", "type": "1", "title": "Try &amp; Catch", "content": "Try{  // code that might cause an exception}Catch{  catch(Exception) } ", "upVote": 0, "downVote": 0, "tags": ["Erlang", "exception"], "favorite": false, "dateCreated": "2017-11-20 03:31:40", "dateModified": "2017-11-20 03:31:40"}

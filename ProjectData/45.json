@@ -1,0 +1,1 @@
+{"nId": "72", "userId": "22", "type": "1", "title": "Javascript", "content": "<script language=\"JavaScript\">\t\tvar text = document.getElementById(\"firstP\").innerHTML;\t\twindow.alert(text);\t\t\t\t</script>", "upVote": 0, "downVote": 0, "tags": ["HTML", "javascript"], "favorite": false, "dateCreated": "2017-11-20 03:23:13", "dateModified": "2017-11-20 03:23:13"}

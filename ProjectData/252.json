@@ -1,0 +1,1 @@
+{"nId": "327", "userId": "22", "type": "1", "title": "SQL2", "content": "ORDER BY column_name ASC|DESCSELECT COUNT(column_name) FROM table_nameSELECT AVG(column_name) as new_name FROM table_nameGROUP BY StoreHAVING SUM(Sales_Amount) > 200;", "upVote": 0, "downVote": 0, "tags": ["SQL"], "favorite": false, "dateCreated": "2017-11-20 03:27:36", "dateModified": "2017-11-20 03:27:36"}

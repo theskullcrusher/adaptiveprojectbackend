@@ -1,0 +1,1 @@
+{"nId": "1", "userId": "2", "type": "1", "title": "Example Code", "content": "for (i = 0; i < cars.length; i++) {     text += cars[i] + \"<br>\";}", "upVote": 0, "downVote": 0, "tags": ["C"], "favorite": false, "dateCreated": "2017-11-20 03:22:09", "dateModified": "2017-11-20 03:22:09"}

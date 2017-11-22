@@ -1,0 +1,1 @@
+{"nId": "622", "userId": "14", "type": "0", "title": "Prompt USer", "content": "&lt;script type=\"text/javascript\"&gt; &lt;var input= window.prompt(\"please enter your name\"); document.write(input); &lt;/script&gt;", "upVote": 0, "downVote": 0, "tags": ["HTML"], "favorite": false, "dateCreated": "2017-11-20 03:31:39", "dateModified": "2017-11-20 03:31:39"}

@@ -1,0 +1,1 @@
+{"nId": "83", "userId": "22", "type": "1", "title": "Array vs. Object", "content": "Array: var person = [\"John\", \"Doe\", 46];Object: var person = {firstName:\"John\", lastName:\"Doe\", age:46};", "upVote": 0, "downVote": 0, "tags": ["Javascript", "object"], "favorite": false, "dateCreated": "2017-11-20 03:23:21", "dateModified": "2017-11-20 03:23:21"}

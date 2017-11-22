@@ -1,0 +1,1 @@
+{"nId": "470", "userId": "54", "type": "1", "title": "JavaScript ex.", "content": "var my_date = Date(); var my_div = document.getElementById(\"my_div\"); my_div.innHTML = my_date;", "upVote": 0, "downVote": 0, "tags": ["Javascript", "date"], "favorite": false, "dateCreated": "2017-11-20 03:29:36", "dateModified": "2017-11-20 03:29:36"}

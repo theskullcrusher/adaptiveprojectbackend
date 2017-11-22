@@ -1,0 +1,1 @@
+{"nId": "420", "userId": "56", "type": "1", "title": "windows prompt", "content": "<script type=\"text/JavaScript\"> var input = window.prompt(\"name\"); document.write(input); </script>", "upVote": 0, "downVote": 0, "tags": ["HTML"], "favorite": false, "dateCreated": "2017-11-20 03:28:55", "dateModified": "2017-11-20 03:28:55"}

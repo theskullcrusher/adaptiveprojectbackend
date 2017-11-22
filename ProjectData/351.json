@@ -1,0 +1,1 @@
+{"nId": "441", "userId": "47", "type": "0", "title": "SQL Subset", "content": "<div>SELECT desired columns</div><div>FROM table name</div><div>WHERE conditions</div><div>ORDER BT column_name ASCIDESC</div>", "upVote": 0, "downVote": 0, "tags": ["HTML", "select", "where"], "favorite": false, "dateCreated": "2017-11-20 03:29:18", "dateModified": "2017-11-20 03:29:18"}

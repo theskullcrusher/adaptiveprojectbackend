@@ -1,0 +1,1 @@
+{"nId": "195", "userId": "19", "type": "1", "title": "SQL", "content": "CREATE TABLE nametable(id int(20),name varchar(20),);", "upVote": 0, "downVote": 0, "tags": ["SQL"], "favorite": false, "dateCreated": "2017-11-20 03:26:03", "dateModified": "2017-11-20 03:26:03"}
