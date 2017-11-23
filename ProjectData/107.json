@@ -1,1 +1,0 @@
-{"nId": "153", "userId": "39", "type": "1", "title": "<br>", "content": "/*Join*/SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;", "upVote": 0, "downVote": 0, "tags": ["SQL"], "favorite": false, "dateCreated": "2017-11-20 03:24:06", "dateModified": "2017-11-20 03:24:06"}

@@ -1,1 +1,0 @@
-{"nId": "375", "userId": "30", "type": "1", "title": "SQL table creation", "content": "CREATE TABLE CPI_study_log(log_id int(10) NOT NULL,user_id int(1) NOT NULLbegin_time timestamp,end_time timestamp);", "upVote": 0, "downVote": 0, "tags": ["SQL"], "favorite": false, "dateCreated": "2017-11-20 03:28:07", "dateModified": "2017-11-20 03:28:07"}

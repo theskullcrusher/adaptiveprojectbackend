@@ -1,1 +1,0 @@
-{"nId": "639", "userId": "59", "type": "1", "title": "", "content": "var employeeListObj = JSON.parse(gameText);employeeListObj.employees.length;employeeListObj.employees[0].firstName;//John*<a href=\"url\">link text</a>", "upVote": 0, "downVote": 0, "tags": ["Java"], "favorite": false, "dateCreated": "2017-11-20 03:31:48", "dateModified": "2017-11-20 03:31:48"}

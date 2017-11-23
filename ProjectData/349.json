@@ -1,1 +1,0 @@
-{"nId": "439", "userId": "47", "type": "0", "title": "SQL Table", "content": "<div>CREATE TABLEL Activity (</div><div>act_idint(11)NOTNULL,</div><div>act_namevarchar(20)NOTNULL, </div><div>act_calint(11)NOTNULL<br>);</div>", "upVote": 0, "downVote": 0, "tags": ["HTML", "notnull"], "favorite": false, "dateCreated": "2017-11-20 03:29:17", "dateModified": "2017-11-20 03:29:17"}

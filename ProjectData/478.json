@@ -1,1 +1,0 @@
-{"nId": "598", "userId": "7", "type": "1", "title": "", "content": "(a) SELECT COUNT(CourseName) FROM ExamDB GROUP BYCourseName;(b) SELECT DISTINCT(Semester) FROM ExamDB WHERE CourseName =?CPI101?;", "upVote": 0, "downVote": 0, "tags": ["SQL"], "favorite": false, "dateCreated": "2017-11-20 03:31:23", "dateModified": "2017-11-20 03:31:23"}

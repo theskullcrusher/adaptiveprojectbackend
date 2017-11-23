@@ -1,1 +1,0 @@
-{"nId": "154", "userId": "39", "type": "1", "title": "<br>", "content": "document.getElementById(\"td4\").innerHTML = game_result;document.getElementById(\"td4\").innerHTML = win_loss.toString();", "upVote": 0, "downVote": 0, "tags": ["Java"], "favorite": false, "dateCreated": "2017-11-20 03:24:07", "dateModified": "2017-11-20 03:24:07"}

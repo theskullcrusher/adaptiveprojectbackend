@@ -1,1 +1,0 @@
-{"nId": "413", "userId": "56", "type": "1", "title": "query", "content": "SELECTdurationFROMActivity_logWHERElog_timestamp<20170215000000SELECTact_calFROMActivity_logGROUP BY act_calORDER BY act_name DESCSELECT DISTINCT", "upVote": 0, "downVote": 0, "tags": ["SQL"], "favorite": false, "dateCreated": "2017-11-20 03:28:50", "dateModified": "2017-11-20 03:28:50"}

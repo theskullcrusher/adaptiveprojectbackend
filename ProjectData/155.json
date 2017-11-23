@@ -1,1 +1,0 @@
-{"nId": "211", "userId": "60", "type": "1", "title": "SQL Syntax", "content": "SQL syntaxSELECT * FROM tableWHERE ...GROUP BY...HAVING...INSERT INTO table_nameVALUESCREATE TABLE ...", "upVote": 0, "downVote": 0, "tags": ["Objective-C", "sql", "having", "table"], "favorite": false, "dateCreated": "2017-11-20 03:26:23", "dateModified": "2017-11-20 03:26:23"}

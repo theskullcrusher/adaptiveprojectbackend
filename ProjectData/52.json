@@ -1,1 +1,0 @@
-{"nId": "81", "userId": "24", "type": "1", "title": "SQL 1", "content": "SELECT* FROM tableWHERE ...GROUP BY...HAVING...INSERT INTO table_nameVALUESCREATE TABLE ...", "upVote": 0, "downVote": 0, "tags": ["Objective-C", "having", "table"], "favorite": false, "dateCreated": "2017-11-20 03:23:19", "dateModified": "2017-11-20 03:23:19"}

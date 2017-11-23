@@ -1,1 +1,0 @@
-{"nId": "283", "userId": "63", "type": "0", "title": "Select Subset", "content": "SELECT desired_columns&nbsp;<div>FROM table_name&nbsp;</div><div>WHERE conditions;</div>", "upVote": 0, "downVote": 0, "tags": ["HTML", "select", "where"], "favorite": false, "dateCreated": "2017-11-20 03:27:08", "dateModified": "2017-11-20 03:27:08"}

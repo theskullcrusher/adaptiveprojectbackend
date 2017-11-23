@@ -1,1 +1,0 @@
-{"nId": "558", "userId": "43", "type": "1", "title": "LIKE/IN", "content": "WHERE date LIKE \"20170%\";WHERE date IN ('20170109', '20170111');", "upVote": 0, "downVote": 0, "tags": ["HTML", "like", "where"], "favorite": false, "dateCreated": "2017-11-20 03:30:45", "dateModified": "2017-11-20 03:30:45"}

@@ -1,1 +1,0 @@
-{"nId": "336", "userId": "58", "type": "1", "title": "checkInput()", "content": "function checkInput() {  if (document.getElementById('inputField').value.length==\"\") {    alert(\"you must enter a value\");  }}", "upVote": 0, "downVote": 0, "tags": ["Javascript"], "favorite": false, "dateCreated": "2017-11-20 03:27:42", "dateModified": "2017-11-20 03:27:42"}

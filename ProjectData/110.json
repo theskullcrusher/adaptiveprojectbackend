@@ -1,1 +1,0 @@
-{"nId": "156", "userId": "39", "type": "1", "title": "<br>", "content": "/* how many different kinds of activities did you do? */SELECT act_id, COUNT(DISTINCT act_id) AS activityCount FROM Activity_log;", "upVote": 0, "downVote": 0, "tags": ["SQL", "count", "distinct"], "favorite": false, "dateCreated": "2017-11-20 03:24:08", "dateModified": "2017-11-20 03:24:08"}

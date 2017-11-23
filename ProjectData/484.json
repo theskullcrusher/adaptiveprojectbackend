@@ -1,1 +1,0 @@
-{"nId": "604", "userId": "13", "type": "1", "title": "", "content": "        AND DATE_FORMAT(log_timestamp, '%p') = 'AM'        AND act_name = 'walking';    ", "upVote": 0, "downVote": 0, "tags": ["SQL"], "favorite": false, "dateCreated": "2017-11-20 03:31:28", "dateModified": "2017-11-20 03:31:28"}

@@ -1,1 +1,0 @@
-{"nId": "236", "userId": "40", "type": "1", "title": "Java Iteration", "content": "for(i=0; i<cars.length;i++){  text+=cars[i]+\"<br>\"  }    Loops that are used to go through a code more than once for different outputs.", "upVote": 0, "downVote": 0, "tags": ["Javascript", "loops"], "favorite": false, "dateCreated": "2017-11-20 03:26:39", "dateModified": "2017-11-20 03:26:39"}
