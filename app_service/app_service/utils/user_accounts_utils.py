@@ -17,6 +17,7 @@ import json
 import pdb
 import requests, json
 from elasticsearch import Elasticsearch
+import pprint
 
 
 def search_index_main(search):
@@ -26,7 +27,7 @@ def search_index_main(search):
 	}
 	res = es.search(index='cheatsheets',body=body)	
 	pp = pprint.PrettyPrinter(indent=4)
-	pp.pprint(res)
+	#pp.pprint(res)
 	return res
 
 
@@ -37,7 +38,7 @@ def search_index_para(search, key):
 	}
 	res = es.search(index='cheatsheets',body=body)	
 	pp = pprint.PrettyPrinter(indent=4)
-	pp.pprint(res)
+	#pp.pprint(res)
 	return res
 
 

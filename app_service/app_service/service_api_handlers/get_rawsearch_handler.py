@@ -31,7 +31,7 @@ def handle_request(query):
 		scores = [doc['_score'] for doc in response['hits']['hits']]
 		for z, v in enumerate(val):
 			card = Cards.objects.filter(id=int(v)).first()
-			if card not None:
+			if card is not None:
 				c_dict = {}
 				c_dict['score'] = str(scores[z])
 				c_dict['id'] = str(card.id)
