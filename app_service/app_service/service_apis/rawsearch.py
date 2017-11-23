@@ -8,18 +8,19 @@ from flask.ext import restful
 
 from app_service.conf.config_logger_setup import setup_config_logger
 from app_service.service_api_handlers import \
-	 get_cheatsheets_handler
+	 get_rawsearch_handler
 from app_service.utils.resource import Resource
 from app_service.utils.auth import get_user
 
-class GetCheatSheets(Resource):
+class RawSearch(Resource):
 	""" 
-	This class gets all cheatsheets
+	This class returns rawsearch results
 	"""
 
 	def get(self):
 		try:
-			return get_cheatsheets_handler.handle_request()        
+			query = request.args.get('search','')
+			return get_rawsearch_handler.handle_request(query)        
 			close_old_connections()
 
 		except Exception as e:
