@@ -15,6 +15,7 @@ from app_db.app_models.models import *
 import ast
 import json
 import pdb
+from app_service.utils.user_accounts_utils import update_index
 
 def handle_request(data):
 	"""
@@ -46,9 +47,11 @@ def handle_request(data):
 			for each in tags:
 				Tags.objects.create(card=card,tag=str(each))
 
+		data['id'] = card.id
+		flg = update_index(data)
 		return {
 			'success': True,
-			'message': 'Successfully updated cheatsheet',
+			'message': 'Successfully updated cheatsheet and updated ES: '+str(flg),
 			'status': 200
 		}
 	except Exception as e:

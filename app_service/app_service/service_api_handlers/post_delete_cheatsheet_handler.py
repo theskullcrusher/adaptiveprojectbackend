@@ -15,6 +15,8 @@ from app_db.app_models.models import *
 import ast
 import json
 import pdb
+from app_service.utils.user_accounts_utils import delete_index
+
 
 def handle_request(data):
 	"""
@@ -30,10 +32,12 @@ def handle_request(data):
 			'status': 404
 		}
 		if card.owner == user:
+			id_ = card.id
 			card.delete()
+			flg = delete_index(id_)
 			return {
 				'success': True,
-				'message': 'Successfully deleted cheatsheet',
+				'message': 'Successfully deleted cheatsheet and ES entry: '+str(flg),
 				'status': 200
 			}
 		return {

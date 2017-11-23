@@ -12,14 +12,13 @@ export PYTHONPATH=$(pwd)
 2] API sample calls with outputs
 
 ### Please note that almost all input and return parameters are strings even if values are numbers (example: card ids or noofupvotes)
-# Replace localhost:7285 with domain ec2-18-221-144-47.us-east-2.compute.amazonaws.com
 
 
-2.1) POST http://localhost:7285/userservice/createuser/
+2.1) POST http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/userservice/createuser/
 
 import requests, json
 headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'] }
-url = 'http://127.0.0.1:7285/userservice/createuser/'
+url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/userservice/createuser/'
 ```
 data = {'email':'surajshah@asu.edu','pswd':'a','details':{'first_name':'Suraj','last_name':'Shah'} }
 ```
@@ -48,11 +47,11 @@ print response.text
 ```
 
 
-2.2) POST http://127.0.0.1:7285/userservice/uservalidation/
+2.2) POST http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/userservice/uservalidation/
 
 import requests, json
 headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH']}
-url = 'http://127.0.0.1:7285/userservice/uservalidation/'
+url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/userservice/uservalidation/'
 data = {'email':'surajshah@asu.edu','pswd':'a', 'remember_me':'1'}
 #remember_me=1 will permanently set user session, any other value will not
 response = requests.post(url,headers=headers,data=json.dumps(data))
@@ -61,7 +60,7 @@ print response.text
 {
     "responseData": {
         "content": {
-            "X-Authorization-Token": "93d3505b-71ca-4912-9981-efd94e5c40bc", 
+            "X-Authorization-Token": "e1fd5727-653f-4def-a20b-7b428cc34fed", 
             "is_authorized": true, 
             "username": "surajshah@asu.edu"
         }, 
@@ -73,13 +72,15 @@ print response.text
 
 
 
-2.3) POST http://127.0.0.1:7285/cardservice/createcard/
+2.3) POST http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/createcard/
 
 import requests, json
 #dont forget to replace the value of X-Authorization-Token you get after login into the header below. Each token is good for 30days
-headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': '93d3505b-71ca-4912-9981-efd94e5c40bc'}
-url = 'http://127.0.0.1:7285/cardservice/createcard/'
-data = {'title':'Programming OOPS', 'content':'Abstraction, Polymorphism, Encapsulation, Inheritence', 'type':'0', 'tags':['oops', 'c++','java']}
+headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': 'e1fd5727-653f-4def-a20b-7b428cc34fed'}
+url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/createcard/'
+data = {'title':'Programming OOPS', 'content':'Abstraction, Polymorphism, Encapsulation, Inheritence', 'type':'0', 'tags':['oops', 'c++','java'],
+'upVote':'3','downVote':'1'}
+#upVote and downVote are optional
 #type can be 0 or 1, try to send all tags in lowercase and trimmed
 response = requests.post(url,headers=headers,data=json.dumps(data))
 print response.text
@@ -94,12 +95,12 @@ print response.text
 ```
 
 
-2.4) GET http://127.0.0.1:7285/cardservice/getallcards/
+2.4) GET http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/getallcards/
 
 import requests, json
 #dont forget to replace the value of X-Authorization-Token you get after login into the header below. Each token is good for 30days
-headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': '93d3505b-71ca-4912-9981-efd94e5c40bc'}
-url = 'http://127.0.0.1:7285/cardservice/getallcards/'
+headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': 'e1fd5727-653f-4def-a20b-7b428cc34fed'}
+url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/getallcards/'
 #returns all cards based on most recently created/modified first - can be changed to get order according to recommendation algo
 response = requests.get(url,headers=headers)
 print response.text
@@ -132,13 +133,13 @@ print response.text
 ```
 
 
-2.5) POST http://127.0.0.1:7285/cardservice/updatecard/
+2.5) POST http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/updatecard/
 
 import requests, json
 #dont forget to replace the value of X-Authorization-Token you get after login into the header below. Each token is good for 30days
-headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': '93d3505b-71ca-4912-9981-efd94e5c40bc'}
-url = 'http://127.0.0.1:7285/cardservice/updatecard/'
-data = {'id':'1', 'title':'OOPS Concepts', 'content':'Abstraction, Encapsulation, Inheritence', 'type':'0', 'tags':['oops','concepts']}
+headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': 'e1fd5727-653f-4def-a20b-7b428cc34fed'}
+url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/updatecard/'
+data = {'id':'2', 'title':'OOPS Concepts', 'content':'Abstraction, Encapsulation, Inheritence', 'type':'0', 'tags':['oops','concepts']}
 #All tags before will be deleted and new sent will be added. Make sure you send the old ones if you want them to be retained
 #type can be 0 or 1, try to send all tags in lowercase and trimmed
 response = requests.post(url,headers=headers,data=json.dumps(data))
@@ -154,12 +155,12 @@ print response.text
 ```
 
 
-2.6) POST http://127.0.0.1:7285/cardservice/deletecard/
+2.6) POST http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/deletecard/
 
 import requests, json
 #dont forget to replace the value of X-Authorization-Token you get after login into the header below. Each token is good for 30days
-headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': '93d3505b-71ca-4912-9981-efd94e5c40bc'}
-url = 'http://127.0.0.1:7285/cardservice/deletecard/'
+headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': 'e1fd5727-653f-4def-a20b-7b428cc34fed'}
+url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/deletecard/'
 #I created the 1st card again so it got assigned id=2, which i deleted here. the id is returned in getallcards api
 data = {'id':'2'}
 response = requests.post(url,headers=headers,data=json.dumps(data))
@@ -176,12 +177,12 @@ print response.text
 
 
 
-2.7) POST http://127.0.0.1:7285/cardservice/upvote/
+2.7) POST http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/upvote/
 
 import requests, json
 #dont forget to replace the value of X-Authorization-Token you get after login into the header below. Each token is good for 30days
-headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': '93d3505b-71ca-4912-9981-efd94e5c40bc'}
-url = 'http://127.0.0.1:7285/cardservice/upvote/'
+headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': 'e1fd5727-653f-4def-a20b-7b428cc34fed'}
+url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/upvote/'
 data = {'id':'1'}
 response = requests.post(url,headers=headers,data=json.dumps(data))
 print response.text
@@ -196,12 +197,12 @@ print response.text
 ```
 
 
-2.8) POST http://127.0.0.1:7285/cardservice/downvote/
+2.8) POST http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/downvote/
 
 import requests, json
 #dont forget to replace the value of X-Authorization-Token you get after login into the header below. Each token is good for 30days
-headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': '93d3505b-71ca-4912-9981-efd94e5c40bc'}
-url = 'http://127.0.0.1:7285/cardservice/downvote/'
+headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': 'e1fd5727-653f-4def-a20b-7b428cc34fed'}
+url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/downvote/'
 data = {'id':'1'}
 response = requests.post(url,headers=headers,data=json.dumps(data))
 print response.text
@@ -216,12 +217,12 @@ print response.text
 ```
 
 
-2.9) POST http://127.0.0.1:7285/cardservice/favorite/
+2.9) POST http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/favorite/
 
 import requests, json
 #dont forget to replace the value of X-Authorization-Token you get after login into the header below. Each token is good for 30days
-headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': '93d3505b-71ca-4912-9981-efd94e5c40bc'}
-url = 'http://127.0.0.1:7285/cardservice/favorite/'
+headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': 'e1fd5727-653f-4def-a20b-7b428cc34fed'}
+url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/favorite/'
 data = {'id':'1'}
 #Automatically identifies if the user had favorited the item or not and switches between true and false so you can highlight or remove star-color
 response = requests.post(url,headers=headers,data=json.dumps(data))
@@ -239,12 +240,12 @@ print response.text
 ```
 
 
-2.10) POST http://127.0.0.1:7285/cardservice/userlogs/
+2.10) POST http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/userlogs/
 
 import requests, json
 #dont forget to replace the value of X-Authorization-Token you get after login into the header below. Each token is good for 30days
-headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': '93d3505b-71ca-4912-9981-efd94e5c40bc'}
-url = 'http://127.0.0.1:7285/cardservice/userlogs/'
+headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': 'e1fd5727-653f-4def-a20b-7b428cc34fed'}
+url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/userlogs/'
 data = {'id':'1', 'action':'open'}
 #Call will fail if a cheatsheetid is not sent. action parameters can be lowercase - ['open','close','update','upvote','downvote','favorite','unfavorite'] or anything else you want to include and standardize. Make a call to this api on any UI action you find significant. I can give you more api parameter support too - like time spent on each cheatsheet or highlighted portion if you need it later on.
 response = requests.post(url,headers=headers,data=json.dumps(data))

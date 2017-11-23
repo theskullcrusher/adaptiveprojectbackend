@@ -15,6 +15,7 @@ from app_db.app_models.models import *
 import ast
 import json
 import pdb
+from app_service.utils.user_accounts_utils import create_index
 
 def handle_request(data):
 	"""
@@ -23,14 +24,25 @@ def handle_request(data):
 	try:
 		user = get_user()
 		tags = data['tags']
-		card = Cards.objects.create(owner=user,title=data['title'],content=data['content'],c_type=int(data['type']))
+		if 'upVote' in data:
+			upVote = data['upVote']
+		else:
+			upVote = 0
+		if 'downVote' in data:
+			downVote = data['downVote']
+		else:
+			downVote = 0
+		card = Cards.objects.create(owner=user,title=data['title'],content=data['content'],c_type=int(data['type']), upvotes=int(upVote), downvotes=int(downVote))
 		if len(tags) != 0:
 			for each in tags:
 				Tags.objects.create(card=card,tag=str(each))
 
+		data['id'] = card.id
+		#push data to ES
+		flg = create_index(data)
 		return {
 			'success': True,
-			'message': 'Successfully created cheatsheet',
+			'message': 'Successfully created cheatsheet and pushed to ES: '+str(flg),
 			'status': 200
 		}
 	except Exception as e:
