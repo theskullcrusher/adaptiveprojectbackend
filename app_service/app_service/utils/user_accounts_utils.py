@@ -21,24 +21,24 @@ from elasticsearch import Elasticsearch
 
 def search_index_main(search):
 	"""Search an index"""
-		es = Elasticsearch()
-		body = {"query": {"multi_match": {"query":search, "fields":["content","title","tags"]}}
-		}
-		res = es.search(index='cheatsheets',body=body)	
-		pp = pprint.PrettyPrinter(indent=4)
-		pp.pprint(res)
-		return res
+	es = Elasticsearch()
+	body = {"query": {"multi_match": {"query":search, "fields":["content","title","tags"]}}
+	}
+	res = es.search(index='cheatsheets',body=body)	
+	pp = pprint.PrettyPrinter(indent=4)
+	pp.pprint(res)
+	return res
 
 
 def search_index_para(search, key):
 	"""Search an index"""
-		es = Elasticsearch()
-		body = {"query": {"match": {key:search}}
-		}
-		res = es.search(index='cheatsheets',body=body)	
-		pp = pprint.PrettyPrinter(indent=4)
-		pp.pprint(res)
-		return res
+	es = Elasticsearch()
+	body = {"query": {"match": {key:search}}
+	}
+	res = es.search(index='cheatsheets',body=body)	
+	pp = pprint.PrettyPrinter(indent=4)
+	pp.pprint(res)
+	return res
 
 
 def create_index(data):
