@@ -41,6 +41,8 @@ def handle_request(data):
 		card.title = data['title']
 		card.content = data['content']
 		card.c_type = int(data['type'])
+		if 'private' in data:
+			card.private = data['private']
 		card.save()
 		if len(tags) != 0:
 			Tags.objects.filter(card=card).delete()

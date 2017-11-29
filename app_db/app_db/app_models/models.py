@@ -35,6 +35,7 @@ class Cards(models.Model):
 	c_type = models.IntegerField(default=0)
 	created_on = models.DateTimeField(auto_now_add=True)
 	last_modified = models.DateTimeField(auto_now=True)
+	private = models.BooleanField(default=False)
 
 
 class Tags(models.Model):

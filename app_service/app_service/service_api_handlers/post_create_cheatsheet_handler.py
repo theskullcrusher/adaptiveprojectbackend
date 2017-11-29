@@ -32,7 +32,11 @@ def handle_request(data):
 			downVote = data['downVote']
 		else:
 			downVote = 0
-		card = Cards.objects.create(owner=user,title=data['title'],content=data['content'],c_type=int(data['type']), upvotes=int(upVote), downvotes=int(downVote))
+		if 'private' in data:
+			private = data['private']
+		else:
+			private = False
+		card = Cards.objects.create(owner=user,title=data['title'],content=data['content'],c_type=int(data['type']), upvotes=int(upVote), downvotes=int(downVote), private=private)
 		if len(tags) != 0:
 			for each in tags:
 				Tags.objects.create(card=card,tag=str(each))

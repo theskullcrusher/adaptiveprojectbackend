@@ -3,8 +3,15 @@ Adaptive Web Study Genie backend
 
 
 1] System Setup 
-# To be added later
+#Run install_packages.sh shell script in home folder
+#go to app_db and run pip install -r requirements.txt
+#then export this
 export DJANGO_SETTINGS_MODULE=app_db.settings.local
+#now run python setup.py develop to install library
+#now run python manage.py migrate       #to setup the database
+#make sure ur mysql user is root, password is surajshah and dbname is app
+#go to app_service
+#export
 export PYTHONPATH=$(pwd)
 
 
