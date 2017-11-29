@@ -109,21 +109,40 @@ print response.text
     "responseData": {
         "result": [
             {
-                "content": "Abstraction, Polymorphism, Encapsulation, Inheritence", 
-                "created_on": "2017-11-16 06:33:49.870317+00:00", 
+                "content": "test content yada yad", 
+                "created_on": "2017-11-21 22:37:41.044169+00:00", 
                 "downvotes": "0", 
                 "favorite": false, 
-                "id": "1", 
-                "last_modified": "2017-11-16 06:33:49.870352+00:00", 
-                "owner": "Suraj Shah", 
+                "id": "2", 
+                "last_modified": "2017-11-23 02:25:24.844200+00:00", 
+                "owner": "aaa aaa", 
+                "owner_id": "12", 
                 "tags": [
-                    "java", 
-                    "c++", 
+                    "tag 1", 
+                    "tag 2", 
+                    "tag 3"
+                ], 
+                "title": "lorem ipsum", 
+                "type": "0", 
+                "upvotes": "0", 
+                "user_owner": false
+            }, 
+            {
+                "content": "Abstract, Inherit", 
+                "created_on": "2017-11-22 23:55:08.382566+00:00", 
+                "downvotes": "0", 
+                "favorite": false, 
+                "id": "3", 
+                "last_modified": "2017-11-22 23:57:20.875366+00:00", 
+                "owner": "Suraj Shah", 
+                "owner_id": "1", 
+                "tags": [
                     "oops"
                 ], 
-                "title": "Programming OOPS", 
+                "title": "OOPSIEEE Concepts", 
                 "type": "0", 
-                "upvotes": "0"
+                "upvotes": "0", 
+                "user_owner": true
             }
         ], 
         "status": 200, 
@@ -274,59 +293,42 @@ print response.text
     "responseData": {
         "result": [
             {
-                "content": "It is a \u201cscripting\u201d language, nothing to do with Java (java is all purpose lang).<br>It is interpreted language, scripts are executed without compilation.<br>Usually embedded in HTML pages &amp; add interactivity to HTML pages.<br>It will be executed immediately while the page loads into your browser. (sometimes, it is not what we want; we may want to execute when user trigger it or when the page loads)<br>JavaScript is case sensitive. (same as Java)<div><b>When to use JS?</b></div><div>Form validation.<br>React to events, even when the page is finished loading, including read and update the HTML content.<br>Offload a busy server.<br>Communicate to the browser.<br>Can create&nbsp;cookies<span style=\"background-color: transparent; font-size: 18pt; font-family: Arial; color: rgb(89, 89, 89); vertical-align: baseline; white-space: pre-wrap;\"> </span>to store and retrieve information on your computer.</div>", 
-                "created_on": "2017-11-23 03:42:14.587902+00:00", 
+                "content": "for(i=0; i<cars.length;i++){  text+=cars[i]+\"<br>\"  }    Loops that are used to go through a code more than once for different outputs.", 
+                "created_on": "2017-11-23 03:42:12.848887+00:00", 
                 "downvotes": "0", 
                 "favorite": false, 
-                "id": "234", 
-                "last_modified": "2017-11-23 03:42:14.587927+00:00", 
-                "owner": "BBB User 2", 
-                "score": "6.987784", 
+                "id": "176", 
+                "last_modified": "2017-11-23 03:42:12.848912+00:00", 
+                "owner": "AAA User 1", 
+                "owner_id": "14", 
+                "score": "4.1118436", 
                 "tags": [
-                    "communicate", 
-                    "javascript", 
-                    "java", 
-                    "html", 
-                    "HTML"
-                ], 
-                "title": "JS intro", 
-                "type": "0", 
-                "upvotes": "0"
-            }, 
-            {
-                "content": "It is a \u201cscripting\u201d language, nothing to do with Java (java is all purpose lang).It is interpreted language, scripts are executed without compilation.Usually embedded in HTML pages & add interactivity to HTML pages.It will be executed immediately while the page loads into your browser. (sometimes, it is not what we want; we may want to execute when user trigger it or when the page loads)JavaScript is case sensitive. (same as Java)", 
-                "created_on": "2017-11-23 03:42:21.927592+00:00", 
-                "downvotes": "0", 
-                "favorite": false, 
-                "id": "449", 
-                "last_modified": "2017-11-23 03:42:21.927617+00:00", 
-                "owner": "CCC User 3", 
-                "score": "5.572879", 
-                "tags": [
-                    "javascript", 
-                    "java", 
-                    "html", 
+                    "loops", 
                     "Javascript"
                 ], 
-                "title": "What is JavaScript?", 
+                "title": "Java Iteration", 
                 "type": "1", 
-                "upvotes": "0"
+                "upvotes": "0", 
+                "user_owner": false
             }, 
             {
-                "content": "<ul><li>Client- browser, codes are visibile, doesn't require server to create data</li><li>Server- codes are invisible in page source, provide data to on browser but does not reside on the browser</li></ul>", 
-                "created_on": "2017-11-23 03:42:20.924882+00:00", 
+                "content": "Two kinds<div><ul><li>Checked(Must be caught with a Try &amp; Catch or throw cause)</li><li>Unchcked(should not be caught. No throw cause</li></ul></div>", 
+                "created_on": "2017-11-23 03:42:23.657257+00:00", 
                 "downvotes": "0", 
                 "favorite": false, 
-                "id": "418", 
-                "last_modified": "2017-11-23 03:42:20.924907+00:00", 
+                "id": "499", 
+                "last_modified": "2017-11-23 03:42:23.657290+00:00", 
                 "owner": "CCC User 3", 
-                "score": "4.97207", 
+                "owner_id": "16", 
+                "score": "3.6080272", 
                 "tags": [
+                    "checked", 
                     "Java"
                 ], 
-                "title": "Client/Server", 
+                "title": "Exceptions&nbsp;", 
                 "type": "0", 
-                "upvotes": "0"
+                "upvotes": "0", 
+                "user_owner": false
             }
         ], 
         "status": 200, 
@@ -350,52 +352,57 @@ print response.text
     "responseData": {
         "result": [
             {
-                "content": "<ul><li>Client- browser, codes are visibile, doesn't require server to create data</li><li>Server- codes are invisible in page source, provide data to on browser but does not reside on the browser</li></ul>", 
-                "created_on": "2017-11-23 03:42:20.924882+00:00", 
+                "content": "Link Example:&nbsp;&lt;a href=\"url\"&gt;link text&lt;/a&gt;<div>CSS: &lt;link rel=\"stylesheet\" href=\"style.css\"&gt;</div><div>or</div><div>&lt;style&gt;</div><div>body {background-color: maroon;}</div><div>h1 {color: blue;}</div><div>&nbsp;&lt;/style&gt;</div><div>Image: &lt;img src=\"url\" alt=\"some_text\" style=\"width:width;height:height;\"&gt;</div><div>Paragraph: &lt;p&gt;This is a paragraph.&lt;/p&gt;</div><div>HTML: &lt;html&gt; &lt;head&gt; ... &lt;/head&gt; &lt;body&gt; ... &lt;/body&gt; &lt;/html&gt;</div><div>Java: &lt;script language=\"JavaScript\"&gt; var text = document.getElementById(\"firstP\").innerHTML; window.alert(text);\t&lt;/script&gt;</div>", 
+                "created_on": "2017-11-23 03:42:18.116040+00:00", 
                 "downvotes": "0", 
                 "favorite": false, 
-                "id": "418", 
-                "last_modified": "2017-11-23 03:42:20.924907+00:00", 
-                "owner": "CCC User 3", 
-                "score": "4.97207", 
+                "id": "340", 
+                "last_modified": "2017-11-23 03:42:18.116065+00:00", 
+                "owner": "BBB User 2", 
+                "owner_id": "15", 
+                "score": "2.30687", 
                 "tags": [
-                    "Java"
+                    "javascript", 
+                    "java", 
+                    "image", 
+                    "css", 
+                    "html", 
+                    "paragraph", 
+                    "HTML"
                 ], 
-                "title": "Client/Server", 
+                "title": "tags", 
                 "type": "0", 
-                "upvotes": "0"
+                "upvotes": "0", 
+                "user_owner": false
             }, 
             {
-                "content": "for(int i = 0; i < n; i++) {//code goes here}", 
-                "created_on": "2017-11-23 03:42:07.157217+00:00", 
+                "content": "<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">HTML- Hyper Text Markup language, the mark up formatting language for the web<o:p></o:p></p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\"></p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Language to build web pages (document structure, content presentation). html</p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">HTML5 -&nbsp;<span style=\"width: auto; height: auto; font-family: Calibri, sans-serif; font-size: 11pt;\">similar but the latest version of hypertext Makeup language</span></p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">XML ? extensible markup language, looks like HTML with no predefined tags, to store and to transfer data, XML tags are case sensitive and element must be properly nested<o:p></o:p></p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">JSON(JavaScript Object Notation) ? alternate to XML, a subset of JavaScript programming language lightweight computer data interchangeable format and is language independent data format&nbsp;<o:p></o:p></p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">Why do we need it? &nbsp;Information exchange: separate content from appearance, to store and transfer data, distributing data over the internet<o:p></o:p></p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">JavaScript: scripting language, nothing to do with Java, to interpreted language, scripts are executed without compilation, usually embedded in HTML and add interactivity to HTML pages<o:p></o:p></p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">Roles: HTML is to define the content of web pages<o:p></o:p></p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CSS to specify the layout of the web pages<o:p></o:p></p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; JavaScript to program the behavior of the web pages<o:p></o:p></p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">supposed to be easier that everybody can write it</p><div>URI/URL: Uniform resource Identifier</div><div>An \"address\" that is unique &amp; used to identify each</div><div>&nbsp;resource on the web.&nbsp;</div><div>HTTP: Hypertext transfer protocols&nbsp;</div><div>Allows for the retrieval of linked resources from the web. &nbsp;</div><div>CSS: Cascading Style Sheets</div><div>Used to specify the layout of a web page.&nbsp;</div>", 
+                "created_on": "2017-11-23 03:42:16.796084+00:00", 
                 "downvotes": "0", 
                 "favorite": false, 
-                "id": "31", 
-                "last_modified": "2017-11-23 03:42:07.157243+00:00", 
-                "owner": "AAA User 1", 
-                "score": "4.676841", 
+                "id": "304", 
+                "last_modified": "2017-11-23 03:42:16.796108+00:00", 
+                "owner": "BBB User 2", 
+                "owner_id": "15", 
+                "score": "1.8933065", 
                 "tags": [
-                    "Java"
-                ], 
-                "title": "For loops", 
-                "type": "1", 
-                "upvotes": "0"
-            }, 
-            {
-                "content": "var employeeListObj = JSON.parse(gameText);employeeListObj.employees.length;employeeListObj.employees[0].firstName;//John*<a href=\"url\">link text</a>", 
-                "created_on": "2017-11-23 03:42:24.044395+00:00", 
-                "downvotes": "0", 
-                "favorite": false, 
-                "id": "510", 
-                "last_modified": "2017-11-23 03:42:24.044418+00:00", 
-                "owner": "CCC User 3", 
-                "score": "4.676841", 
-                "tags": [
-                    "Java"
+                    "html5", 
+                    "javascript", 
+                    "java", 
+                    "roles", 
+                    "css", 
+                    "http", 
+                    "json", 
+                    "html", 
+                    "xml", 
+                    "identifier", 
+                    "uniform", 
+                    "HTML"
                 ], 
                 "title": "", 
-                "type": "1", 
-                "upvotes": "0"
+                "type": "0", 
+                "upvotes": "0", 
+                "user_owner": false
             }
         ], 
         "status": 200, 
