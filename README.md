@@ -259,3 +259,155 @@ print response.text
     }
 }
 ```
+
+
+2.11) GET http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/rawsearch/?search=<value>
+
+import requests, json
+headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': 'e1fd5727-653f-4def-a20b-7b428cc34fed'}
+url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/rawsearch/?search=Java'
+response = requests.get(url,headers=headers)
+print response.text
+#All same format like getallcheatsheets, except the fact that there's an additional score parameter too
+```
+{
+    "responseData": {
+        "result": [
+            {
+                "content": "It is a \u201cscripting\u201d language, nothing to do with Java (java is all purpose lang).<br>It is interpreted language, scripts are executed without compilation.<br>Usually embedded in HTML pages &amp; add interactivity to HTML pages.<br>It will be executed immediately while the page loads into your browser. (sometimes, it is not what we want; we may want to execute when user trigger it or when the page loads)<br>JavaScript is case sensitive. (same as Java)<div><b>When to use JS?</b></div><div>Form validation.<br>React to events, even when the page is finished loading, including read and update the HTML content.<br>Offload a busy server.<br>Communicate to the browser.<br>Can create&nbsp;cookies<span style=\"background-color: transparent; font-size: 18pt; font-family: Arial; color: rgb(89, 89, 89); vertical-align: baseline; white-space: pre-wrap;\"> </span>to store and retrieve information on your computer.</div>", 
+                "created_on": "2017-11-23 03:42:14.587902+00:00", 
+                "downvotes": "0", 
+                "favorite": false, 
+                "id": "234", 
+                "last_modified": "2017-11-23 03:42:14.587927+00:00", 
+                "owner": "BBB User 2", 
+                "score": "6.987784", 
+                "tags": [
+                    "communicate", 
+                    "javascript", 
+                    "java", 
+                    "html", 
+                    "HTML"
+                ], 
+                "title": "JS intro", 
+                "type": "0", 
+                "upvotes": "0"
+            }, 
+            {
+                "content": "It is a \u201cscripting\u201d language, nothing to do with Java (java is all purpose lang).It is interpreted language, scripts are executed without compilation.Usually embedded in HTML pages & add interactivity to HTML pages.It will be executed immediately while the page loads into your browser. (sometimes, it is not what we want; we may want to execute when user trigger it or when the page loads)JavaScript is case sensitive. (same as Java)", 
+                "created_on": "2017-11-23 03:42:21.927592+00:00", 
+                "downvotes": "0", 
+                "favorite": false, 
+                "id": "449", 
+                "last_modified": "2017-11-23 03:42:21.927617+00:00", 
+                "owner": "CCC User 3", 
+                "score": "5.572879", 
+                "tags": [
+                    "javascript", 
+                    "java", 
+                    "html", 
+                    "Javascript"
+                ], 
+                "title": "What is JavaScript?", 
+                "type": "1", 
+                "upvotes": "0"
+            }, 
+            {
+                "content": "<ul><li>Client- browser, codes are visibile, doesn't require server to create data</li><li>Server- codes are invisible in page source, provide data to on browser but does not reside on the browser</li></ul>", 
+                "created_on": "2017-11-23 03:42:20.924882+00:00", 
+                "downvotes": "0", 
+                "favorite": false, 
+                "id": "418", 
+                "last_modified": "2017-11-23 03:42:20.924907+00:00", 
+                "owner": "CCC User 3", 
+                "score": "4.97207", 
+                "tags": [
+                    "Java"
+                ], 
+                "title": "Client/Server", 
+                "type": "0", 
+                "upvotes": "0"
+            }
+        ], 
+        "status": 200, 
+        "success": true
+    }
+}
+```
+
+
+
+
+2.12) GET http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/tagsearch/?search=<value>
+
+import requests, json
+headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': 'e1fd5727-653f-4def-a20b-7b428cc34fed'}
+url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/tagsearch/?search=Java'
+response = requests.get(url,headers=headers)
+print response.text
+'''
+{
+    "responseData": {
+        "result": [
+            {
+                "content": "<ul><li>Client- browser, codes are visibile, doesn't require server to create data</li><li>Server- codes are invisible in page source, provide data to on browser but does not reside on the browser</li></ul>", 
+                "created_on": "2017-11-23 03:42:20.924882+00:00", 
+                "downvotes": "0", 
+                "favorite": false, 
+                "id": "418", 
+                "last_modified": "2017-11-23 03:42:20.924907+00:00", 
+                "owner": "CCC User 3", 
+                "score": "4.97207", 
+                "tags": [
+                    "Java"
+                ], 
+                "title": "Client/Server", 
+                "type": "0", 
+                "upvotes": "0"
+            }, 
+            {
+                "content": "for(int i = 0; i < n; i++) {//code goes here}", 
+                "created_on": "2017-11-23 03:42:07.157217+00:00", 
+                "downvotes": "0", 
+                "favorite": false, 
+                "id": "31", 
+                "last_modified": "2017-11-23 03:42:07.157243+00:00", 
+                "owner": "AAA User 1", 
+                "score": "4.676841", 
+                "tags": [
+                    "Java"
+                ], 
+                "title": "For loops", 
+                "type": "1", 
+                "upvotes": "0"
+            }, 
+            {
+                "content": "var employeeListObj = JSON.parse(gameText);employeeListObj.employees.length;employeeListObj.employees[0].firstName;//John*<a href=\"url\">link text</a>", 
+                "created_on": "2017-11-23 03:42:24.044395+00:00", 
+                "downvotes": "0", 
+                "favorite": false, 
+                "id": "510", 
+                "last_modified": "2017-11-23 03:42:24.044418+00:00", 
+                "owner": "CCC User 3", 
+                "score": "4.676841", 
+                "tags": [
+                    "Java"
+                ], 
+                "title": "", 
+                "type": "1", 
+                "upvotes": "0"
+            }
+        ], 
+        "status": 200, 
+        "success": true
+    }
+}
+
+'''
+
+
+
+
+
+
+
