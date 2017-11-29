@@ -48,6 +48,11 @@ def handle_request(query):
 				else:
 					c_dict['favorite'] = True
 				owner = card.owner
+	                        c_dict['owner_id'] = str(owner.id)
+        	                if owner.id == user.id:
+                	                c_dict['user_owner'] = True
+                        	else:
+                                	c_dict['user_owner'] = False
 				c_dict['owner'] = str(owner.first_name + ' ' +owner.last_name).strip()
 				tags = Tags.objects.filter(card=card).order_by('-last_modified')
 				t_list = []
