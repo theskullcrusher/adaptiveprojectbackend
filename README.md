@@ -423,8 +423,65 @@ print response.text
 '''
 
 
+2.13) GET http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/feed/
 
-
-
-
-
+import requests, json
+#dont forget to replace the value of X-Authorization-Token you get after login into the header below. Each token is good for 30days
+headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': 'e1fd5727-653f-4def-a20b-7b428cc34fed'}
+url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/feed/'
+#returns 10 recent feeds across the platform - all card data plus extra parameters timestamp, activity. User owner field to find the name of person who did the activity
+response = requests.get(url,headers=headers)
+print response.text
+```
+{
+    "responseData": {
+        "result": [
+            {
+                "action": "upvote", 
+                "content": "testing update on card 2", 
+                "created_on": "2017-11-23 02:42:52.738972+00:00", 
+                "downvotes": "0", 
+                "favorite": false, 
+                "id": "4", 
+                "last_modified": "2017-11-23 03:38:26.440532+00:00", 
+                "owner": "aaa aaa", 
+                "owner_id": "12", 
+                "private": false, 
+                "tags": [
+                    "tag 1", 
+                    "tag 2", 
+                    "tag 3"
+                ], 
+                "timestamp": "2017-11-30 04:23:02.501050+00:00", 
+                "title": "test update", 
+                "type": "0", 
+                "upvotes": "3", 
+                "user_owner": false
+            }, 
+            {
+                "action": "favorite", 
+                "content": "<ul><li>integer</li><li>float&nbsp;</li><li>String</li><li>character&nbsp;</li><li>boolean</li></ul>", 
+                "created_on": "2017-11-23 03:42:06.306896+00:00", 
+                "downvotes": "0", 
+                "favorite": false, 
+                "id": "10", 
+                "last_modified": "2017-11-23 03:42:06.306921+00:00", 
+                "owner": "AAA User 1", 
+                "owner_id": "14", 
+                "private": false, 
+                "tags": [
+                    "string", 
+                    "HTML"
+                ], 
+                "timestamp": "2017-11-30 04:21:23.030236+00:00", 
+                "title": "Data Types", 
+                "type": "0", 
+                "upvotes": "0", 
+                "user_owner": false
+            }
+        ], 
+        "status": 200, 
+        "success": true
+    }
+}
+```
