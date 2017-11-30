@@ -17,6 +17,7 @@ import json
 import pdb
 from app_service.utils.user_accounts_utils import search_index_para
 import traceback
+from itertools import chain
 
 def handle_request(query):
 	"""
@@ -33,6 +34,7 @@ def handle_request(query):
 		for z, v in enumerate(val):
 			card = Cards.objects.filter(id=int(v)).first()
 			if card is not None:
+			  if (card.owner == user and card.private == True) or (card.private==False):
 				c_dict = {}
 				c_dict['score'] = str(scores[z])
 				c_dict['id'] = str(card.id)

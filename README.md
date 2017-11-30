@@ -86,7 +86,8 @@ import requests, json
 headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': 'e1fd5727-653f-4def-a20b-7b428cc34fed'}
 url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/createcard/'
 data = {'title':'Programming OOPS', 'content':'Abstraction, Polymorphism, Encapsulation, Inheritence', 'type':'0', 'tags':['oops', 'c++','java'],
-'upVote':'3','downVote':'1'}
+'upVote':'3','downVote':'1', 'private':True}
+#private defines access level of card
 #upVote and downVote are optional
 #type can be 0 or 1, try to send all tags in lowercase and trimmed
 response = requests.post(url,headers=headers,data=json.dumps(data))
@@ -132,7 +133,8 @@ print response.text
                 "title": "lorem ipsum", 
                 "type": "0", 
                 "upvotes": "0", 
-                "user_owner": false
+                "user_owner": false,
+                "private": false
             }, 
             {
                 "content": "Abstract, Inherit", 
@@ -149,7 +151,8 @@ print response.text
                 "title": "OOPSIEEE Concepts", 
                 "type": "0", 
                 "upvotes": "0", 
-                "user_owner": true
+                "user_owner": true,
+                "private": false
             }
         ], 
         "status": 200, 
@@ -165,7 +168,7 @@ import requests, json
 #dont forget to replace the value of X-Authorization-Token you get after login into the header below. Each token is good for 30days
 headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': 'e1fd5727-653f-4def-a20b-7b428cc34fed'}
 url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/updatecard/'
-data = {'id':'2', 'title':'OOPS Concepts', 'content':'Abstraction, Encapsulation, Inheritence', 'type':'0', 'tags':['oops','concepts']}
+data = {'id':'2', 'title':'OOPS Concepts', 'content':'Abstraction, Encapsulation, Inheritence', 'type':'0', 'tags':['oops','concepts'], 'private':True}
 #All tags before will be deleted and new sent will be added. Make sure you send the old ones if you want them to be retained
 #type can be 0 or 1, try to send all tags in lowercase and trimmed
 response = requests.post(url,headers=headers,data=json.dumps(data))

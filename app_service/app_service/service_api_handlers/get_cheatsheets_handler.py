@@ -15,6 +15,7 @@ from app_db.app_models.models import *
 import ast
 import json
 import pdb
+from itertools import chain
 
 def handle_request():
 	"""
@@ -23,7 +24,9 @@ def handle_request():
 	try:
 		user = get_user()
 		result = []
-		cards = Cards.objects.filter().order_by('-last_modified')
+		cards1 = Cards.objects.filter(owner=user, private=True).order_by('-last_modified')
+		cards2 = Cards.objects.filter(private=False).order_by('-last_modified')
+		cards = chain(cards1, cards2)
 
 		for card in cards:
 			c_dict = {}
@@ -35,6 +38,7 @@ def handle_request():
 			c_dict['type'] = str(card.c_type)
 			c_dict['created_on'] = str(card.created_on)
 			c_dict['last_modified'] = str(card.last_modified)
+			c_dict['private'] = card.private
 			fav = Favorite.objects.filter(user=user,card=card).first()
 			if fav == None: 
 				c_dict['favorite'] = False
