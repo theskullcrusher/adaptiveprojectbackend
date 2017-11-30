@@ -27,6 +27,7 @@ from app_service.service_apis.favorite import Favorite
 from app_service.service_apis.userlogs import UserLogs
 from app_service.service_apis.rawsearch import RawSearch
 from app_service.service_apis.tagsearch import TagSearch
+from app_service.service_apis.feed import Feed
 
 from flask.ext.cors import CORS
  
@@ -57,6 +58,7 @@ api.add_resource(Favorite,'/cardservice/favorite/')
 api.add_resource(UserLogs,'/cardservice/userlogs/')
 api.add_resource(RawSearch,'/cardservice/rawsearch/')
 api.add_resource(TagSearch,'/cardservice/tagsearch/')
+api.add_resource(Feed,'/cardservice/feed/')
 
 
 app.logger.info("Resource setup done")
