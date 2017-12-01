@@ -41,10 +41,11 @@ def handle_request():
 				c_dict['user_owner'] = False
 			c_dict['owner'] = str(owner.first_name + ' ' +owner.last_name).strip()
 			result.append(c_dict)
+		result = result[::-1]
 
 		return {
 			'success': True,
-			'result': result.reverse(),
+			'result': result,
 			'status': 200
 		}
 	except Exception as e:

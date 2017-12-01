@@ -27,7 +27,7 @@ def handle_request(data):
 		group = CardGroups.objects.filter(id=int(gp)).first()
 		usrs = data['users']
 		usrs = [int(x) for x in usrs]
-		addusers = AppUsers.objects.filter(id__in=usrs)
+		addusers = AppUser.objects.filter(id__in=usrs)
 		for each in addusers:
 			GroupsUser.objects.create(group=group,user=each)
 		return {

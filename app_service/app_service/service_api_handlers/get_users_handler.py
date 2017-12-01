@@ -25,7 +25,7 @@ def handle_request(group):
 		user = get_user()
 		result = []
 		if group == 0:
-			allusers = AppUsers.objects.all()
+			allusers = AppUser.objects.all()
 		else:
 			gp = CardGroups.objects.filter(id=group).first()
 			if gp != None:
