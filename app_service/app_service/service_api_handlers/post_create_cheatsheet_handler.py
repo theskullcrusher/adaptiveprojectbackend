@@ -48,12 +48,13 @@ def handle_request(data):
 		data['id'] = card.id
 		#push data to ES
 		flg = create_index(data)
-		flg1 = True
+		flg1 = False
 		try:
 			if in_group == True and 'group' in data:
 				group = CardGroups.objects.filter(id=int(data['group'])).first()
 				if group != None:
-					GroupsCard.objects.create(group=group,card=card)
+					gc = GroupsCard.objects.create(group=group,card=card)
+					flg1 = True
 				else:
 					flg1 = False
 		except:
@@ -62,7 +63,7 @@ def handle_request(data):
 
 		return {
 			'success': True,
-			'message': 'Successfully created cheatsheet and pushed to ES: '+str(flg)+'grp push:'+str(flg1),
+			'message': 'Successfully created cheatsheet and pushed to ES: '+str(flg)+' Grp push:'+str(flg1),
 			'status': 200
 		}
 	except Exception as e:

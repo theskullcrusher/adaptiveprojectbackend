@@ -103,6 +103,25 @@ print response.text
 }
 ```
 
+###Createcard for a group
+
+POST http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/createcard/
+
+import requests, json
+#dont forget to replace the value of X-Authorization-Token you get after login into the header below. Each token is good for 30days
+headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': '0fac37eb-aa6e-4cd4-a15f-5a4d6d9655d2'}
+url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/createcard/'
+data = {'title':'Tempe Test lorem epsum', 'content':'Abstraction, Polymorphism, Encapsulation, Inheritence', 'type':'0', 'tags':['oops', 'c++','java'],
+'upVote':'3','downVote':'1', 'private':True, 'in_group':True, 'group':'3'}
+##If in_group is true - send another parameter 'group':'<id>' which tells which group to add the card to
+response = requests.post(url,headers=headers,data=json.dumps(data))
+print response.text
+
+
+
+
+
+
 
 2.4) GET http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/getallcards/
 
@@ -515,21 +534,211 @@ import requests, json
 #dont forget to replace the value of X-Authorization-Token you get after login into the header below. Each token is good for 30days
 headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': '0fac37eb-aa6e-4cd4-a15f-5a4d6d9655d2'}
 url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/getgroups/'
-#returns 10 recent feeds across the platform - all card data plus extra parameters timestamp, activity. User owner field to find the name of person who did the activity
+response = requests.get(url,headers=headers)
+print response.text
+"""
+{
+    "responseData": {
+        "result": [
+            {
+                "created_on": "2017-12-01 07:02:21.864486+00:00", 
+                "id": "1", 
+                "last_modified": "2017-12-01 07:02:21.864513+00:00", 
+                "owner": "Suraj Shah", 
+                "owner_id": "1", 
+                "title": "Html Learners Group", 
+                "user_owner": true
+            }, 
+            {
+                "created_on": "2017-12-01 07:04:27.310516+00:00", 
+                "id": "2", 
+                "last_modified": "2017-12-01 07:04:27.310541+00:00", 
+                "owner": "Suraj Shah", 
+                "owner_id": "1", 
+                "title": "Java Learners Group", 
+                "user_owner": true
+            }
+        ], 
+        "status": 200, 
+        "success": true
+    }
+}
+"""
+
+2.16 POST http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/deletegroup/
+
+import requests, json
+#dont forget to replace the value of X-Authorization-Token you get after login into the header below. Each token is good for 30days
+headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': '0fac37eb-aa6e-4cd4-a15f-5a4d6d9655d2'}
+url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/deletegroup/'
+data = {'group':'1'}
+response = requests.post(url,headers=headers,data=json.dumps(data))
+print response.text
+"""
+{
+    "responseData": {
+        "message": "Successfully deleted group 1", 
+        "status": 200, 
+        "success": true
+    }
+}
+"""
+
+
+2.17 GET http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/getgroupcards/?group=2
+
+import requests, json
+#dont forget to replace the value of X-Authorization-Token you get after login into the header below. Each token is good for 30days
+headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': '0fac37eb-aa6e-4cd4-a15f-5a4d6d9655d2'}
+url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/getgroupcards/?group=2'
+response = requests.get(url,headers=headers)
+print response.text
+"""
+{
+    "responseData": {
+        "result": [
+            {
+                "content": "Abstraction, Polymorphism, Encapsulation, Inheritence", 
+                "created_on": "2017-12-01 07:31:40.180208+00:00", 
+                "downvotes": "1", 
+                "favorite": false, 
+                "id": "534", 
+                "in_group": true, 
+                "last_modified": "2017-12-01 07:31:40.180232+00:00", 
+                "owner": "Suraj Shah", 
+                "owner_id": "1", 
+                "private": true, 
+                "tags": [
+                    "java", 
+                    "c++", 
+                    "oops"
+                ], 
+                "title": "Tempe Test lorem epsum", 
+                "type": "0", 
+                "upvotes": "3", 
+                "user_owner": true
+            }
+        ], 
+        "status": 200, 
+        "success": true
+    }
+}
+"""
+
+
+2.18 GET http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/getusers/
+or
+GET http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/getusers/?group=3
+
+import requests, json
+#dont forget to replace the value of X-Authorization-Token you get after login into the header below. Each token is good for 30days
+headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': '0fac37eb-aa6e-4cd4-a15f-5a4d6d9655d2'}
+#url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/getusers/'
+url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/getusers/?group=3'
+#If group para is sent, returns all users in that group. if not sent, returns details of all users
+
+response = requests.get(url,headers=headers)
+print response.text
+"""
+{
+    "responseData": {
+        "result": [
+            {
+                "email": "", 
+                "id": "1", 
+                "name": "Suraj Shah"
+            }
+        ], 
+        "status": 200, 
+        "success": true
+    }
+}
+"""
+
+
+
+
+2.19 POST http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/addusers/
+
+import requests, json
+#dont forget to replace the value of X-Authorization-Token you get after login into the header below. Each token is good for 30days
+headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': '0fac37eb-aa6e-4cd4-a15f-5a4d6d9655d2'}
+url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/addusers/'
+data = {'group':'3', 'users':['4','5','8','16','18']}
+response = requests.post(url,headers=headers,data=json.dumps(data))
+print response.text
+"""
+{
+    "responseData": {
+        "message": "Successfully added users to groups", 
+        "status": 200, 
+        "success": true
+    }
+}
+"""
+
+
+2.20 GET http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/recommended/
+
+import requests, json
+#dont forget to replace the value of X-Authorization-Token you get after login into the header below. Each token is good for 30days
+headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': '0fac37eb-aa6e-4cd4-a15f-5a4d6d9655d2'}
+url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/recommended/'
 response = requests.get(url,headers=headers)
 print response.text
 
-
-
-
-2.16 delete group
-2.17 getallcards in a group
-2.18 getusers
-2.19 addusers
-2.20 recommendations
-
-
-
-
-
-change updatecard for groups
+##THIS WILL RETURN TOP 10 RECOMMENDED CARDS
+"""
+{
+    "responseData": {
+        "result": [
+            {
+                "content": "Abstraction, Polymorphism, Encapsulation, Inheritence", 
+                "created_on": "2017-12-01 07:16:27.722662+00:00", 
+                "downvotes": "1", 
+                "favorite": false, 
+                "id": "533", 
+                "in_group": false, 
+                "last_modified": "2017-12-01 07:16:27.722689+00:00", 
+                "owner": "Suraj Shah", 
+                "owner_id": "1", 
+                "private": true, 
+                "score": "12.431148", 
+                "tags": [
+                    "java", 
+                    "c++", 
+                    "oops"
+                ], 
+                "title": "Tempe Test lorem epsum", 
+                "type": "0", 
+                "upvotes": "3", 
+                "user_owner": true
+            }, 
+            {
+                "content": "Abstraction, Polymorphism, Encapsulation, Inheritence", 
+                "created_on": "2017-12-01 06:51:07.536214+00:00", 
+                "downvotes": "1", 
+                "favorite": false, 
+                "id": "532", 
+                "in_group": false, 
+                "last_modified": "2017-12-01 06:51:07.536242+00:00", 
+                "owner": "Suraj Shah", 
+                "owner_id": "1", 
+                "private": true, 
+                "score": "11.086023", 
+                "tags": [
+                    "java", 
+                    "c++", 
+                    "oops"
+                ], 
+                "title": "Tempe Test lorem epsum", 
+                "type": "0", 
+                "upvotes": "3", 
+                "user_owner": true
+            }
+        ], 
+        "status": 200, 
+        "success": true
+    }
+}
+"""
