@@ -29,7 +29,7 @@ def handle_request(group):
 		else:
 			gp = CardGroups.objects.filter(id=group).first()
 			if gp != None:
-				allusers = GroupsUser.objects.filter(group=gp)
+				allusers = GroupsUser.objects.filter(group=gp).distinct()
 				allusers = [x.user for x in allusers]
 			else:
 				allusers = []
