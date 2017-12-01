@@ -44,6 +44,8 @@ def handle_request(query):
 				c_dict['type'] = str(card.c_type)
 				c_dict['created_on'] = str(card.created_on)
 				c_dict['last_modified'] = str(card.last_modified)
+				c_dict['in_group'] = card.in_group
+				c_dict['private'] = card.private
 				fav = Favorite.objects.filter(user=user,card=card).first()
 				if fav == None: 
 					c_dict['favorite'] = False

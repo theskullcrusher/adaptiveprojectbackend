@@ -36,6 +36,7 @@ class Cards(models.Model):
 	created_on = models.DateTimeField(auto_now_add=True)
 	last_modified = models.DateTimeField(auto_now=True)
 	private = models.BooleanField(default=False)
+	in_group = models.BooleanField(default=False)
 
 
 class Tags(models.Model):
@@ -57,3 +58,20 @@ class UserLogs(models.Model):
 	card = models.ForeignKey('Cards')
 	action = models.TextField(blank=True)
 	created_on = models.DateTimeField(auto_now_add=True)
+
+
+class Groups(models.Model):
+	owner = models.ForeignKey('AppUser')
+	title = models.TextField(blank=True)
+	created_on = models.DateTimeField(auto_now_add=True)
+	last_modified = models.DateTimeField(auto_now=True)
+
+
+class GroupsUser(models.Model):
+	group = models.ForeignKey('Groups')
+	user = models.ForeignKey('AppUser')
+
+
+class GroupsCard(models.Model):
+	group = models.ForeignKey('Groups')
+	card = models.ForeignKey('Cards')

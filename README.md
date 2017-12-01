@@ -485,3 +485,10 @@ print response.text
     }
 }
 ```
+
+2.14 creategroup
+2.15 getallgroups for a user
+2.16 delete group
+2.17 getallcards in a group
+
+change updatecard for groups

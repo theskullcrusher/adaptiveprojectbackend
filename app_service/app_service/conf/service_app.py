@@ -28,6 +28,11 @@ from app_service.service_apis.userlogs import UserLogs
 from app_service.service_apis.rawsearch import RawSearch
 from app_service.service_apis.tagsearch import TagSearch
 from app_service.service_apis.feed import Feed
+from app_service.service_apis.creategroup import CreateGroup
+from app_service.service_apis.getgroups import GetGroups
+from app_service.service_apis.deletegroup import DeleteGroup
+from app_service.service_apis.getgroupcards import GetGroupCards
+from app_service.service_apis.recommended import Recommended
 
 from flask.ext.cors import CORS
  
@@ -59,6 +64,11 @@ api.add_resource(UserLogs,'/cardservice/userlogs/')
 api.add_resource(RawSearch,'/cardservice/rawsearch/')
 api.add_resource(TagSearch,'/cardservice/tagsearch/')
 api.add_resource(Feed,'/cardservice/feed/')
+api.add_resource(CreateGroup,'/cardservice/creategroup/')
+api.add_resource(GetGroups,'/cardservice/getgroups/')
+api.add_resource(DeleteGroup,'/cardservice/deletegroup/')
+api.add_resource(GetGroupCards,'/cardservice/getgroupcards/')
+api.add_resource(Recommended,'/cardservice/recommended/')
 
 
 app.logger.info("Resource setup done")

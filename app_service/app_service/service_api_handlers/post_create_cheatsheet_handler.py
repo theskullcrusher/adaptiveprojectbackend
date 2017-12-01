@@ -36,7 +36,11 @@ def handle_request(data):
 			private = data['private']
 		else:
 			private = False
-		card = Cards.objects.create(owner=user,title=data['title'],content=data['content'],c_type=int(data['type']), upvotes=int(upVote), downvotes=int(downVote), private=private)
+		if 'in_group' in data:
+			in_group = data['in_group']
+		else:
+			in_group = False
+		card = Cards.objects.create(owner=user,title=data['title'],content=data['content'],c_type=int(data['type']), upvotes=int(upVote), downvotes=int(downVote), private=private, in_group=in_group)
 		if len(tags) != 0:
 			for each in tags:
 				Tags.objects.create(card=card,tag=str(each))
@@ -44,9 +48,21 @@ def handle_request(data):
 		data['id'] = card.id
 		#push data to ES
 		flg = create_index(data)
+		flg1 = True
+		try:
+			if in_group == True and 'group_id' in data:
+				group = Groups.objects.filter(id=int(data['group_id'])).first()
+				if group != None:
+					GroupsCard.objects.create(group=group,card=card)
+				else:
+					flg1 = False
+		except:
+			flg1 = False
+
+
 		return {
 			'success': True,
-			'message': 'Successfully created cheatsheet and pushed to ES: '+str(flg),
+			'message': 'Successfully created cheatsheet and pushed to ES: '+str(flg)+'grp push:'+str(flg1),
 			'status': 200
 		}
 	except Exception as e:

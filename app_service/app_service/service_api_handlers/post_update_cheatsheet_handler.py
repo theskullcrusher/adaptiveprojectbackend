@@ -31,7 +31,7 @@ def handle_request(data):
 				'message': '404 - No such cheatsheet found',
 				'status': 404
 			}
-		if card.owner != user:
+		if card.owner != user and card.in_group == False:
 			return {
 				'success': True,
 				'message': 'Unauthorized - User needed to be the owner of cheatsheet to update it',
