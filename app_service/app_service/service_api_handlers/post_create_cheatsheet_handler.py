@@ -50,8 +50,8 @@ def handle_request(data):
 		flg = create_index(data)
 		flg1 = True
 		try:
-			if in_group == True and 'group_id' in data:
-				group = CardGroups.objects.filter(id=int(data['group_id'])).first()
+			if in_group == True and 'group' in data:
+				group = CardGroups.objects.filter(id=int(data['group'])).first()
 				if group != None:
 					GroupsCard.objects.create(group=group,card=card)
 				else:
