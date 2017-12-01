@@ -51,7 +51,7 @@ def handle_request(data):
 		flg1 = True
 		try:
 			if in_group == True and 'group_id' in data:
-				group = Groups.objects.filter(id=int(data['group_id'])).first()
+				group = CardGroups.objects.filter(id=int(data['group_id'])).first()
 				if group != None:
 					GroupsCard.objects.create(group=group,card=card)
 				else:

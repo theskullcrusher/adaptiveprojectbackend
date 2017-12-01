@@ -32,6 +32,8 @@ from app_service.service_apis.creategroup import CreateGroup
 from app_service.service_apis.getgroups import GetGroups
 from app_service.service_apis.deletegroup import DeleteGroup
 from app_service.service_apis.getgroupcards import GetGroupCards
+from app_service.service_apis.addusers import AddUsers
+from app_service.service_apis.getusers import GetUsers
 from app_service.service_apis.recommended import Recommended
 
 from flask.ext.cors import CORS
@@ -68,8 +70,9 @@ api.add_resource(CreateGroup,'/cardservice/creategroup/')
 api.add_resource(GetGroups,'/cardservice/getgroups/')
 api.add_resource(DeleteGroup,'/cardservice/deletegroup/')
 api.add_resource(GetGroupCards,'/cardservice/getgroupcards/')
+api.add_resource(GetUsers,'/cardservice/getusers/')
+api.add_resource(AddUsers,'/cardservice/addusers/')
 api.add_resource(Recommended,'/cardservice/recommended/')
-
 
 app.logger.info("Resource setup done")
 

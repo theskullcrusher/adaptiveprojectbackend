@@ -60,7 +60,7 @@ class UserLogs(models.Model):
 	created_on = models.DateTimeField(auto_now_add=True)
 
 
-class Groups(models.Model):
+class CardGroups(models.Model):
 	owner = models.ForeignKey('AppUser')
 	title = models.TextField(blank=True)
 	created_on = models.DateTimeField(auto_now_add=True)
@@ -68,10 +68,10 @@ class Groups(models.Model):
 
 
 class GroupsUser(models.Model):
-	group = models.ForeignKey('Groups')
+	group = models.ForeignKey('CardGroups')
 	user = models.ForeignKey('AppUser')
 
 
 class GroupsCard(models.Model):
-	group = models.ForeignKey('Groups')
+	group = models.ForeignKey('CardGroups')
 	card = models.ForeignKey('Cards')
