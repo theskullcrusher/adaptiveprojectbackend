@@ -25,7 +25,7 @@ def handle_request():
 		user = get_user()
 		result = []
 
-		groups = GroupsUser.objects.filter(user=user)		
+		groups = GroupsUser.objects.filter(user=user).distinct()		
 
 		for ugroup in groups:
 			c_dict = {}
@@ -44,7 +44,7 @@ def handle_request():
 
 		return {
 			'success': True,
-			'result': result,
+			'result': result.reverse(),
 			'status': 200
 		}
 	except Exception as e:

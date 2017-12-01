@@ -87,6 +87,7 @@ headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', '
 url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/createcard/'
 data = {'title':'Tempe Test lorem epsum', 'content':'Abstraction, Polymorphism, Encapsulation, Inheritence', 'type':'0', 'tags':['oops', 'c++','java'],
 'upVote':'3','downVote':'1', 'private':True, 'in_group':False}
+##If in_group is true - send another parameter 'group':'<id>' which tells which group to add the card to
 #private defines access level of card
 #upVote and downVote are optional
 #type can be 0 or 1, try to send all tags in lowercase and trimmed
@@ -168,7 +169,7 @@ import requests, json
 #dont forget to replace the value of X-Authorization-Token you get after login into the header below. Each token is good for 30days
 headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': '0fac37eb-aa6e-4cd4-a15f-5a4d6d9655d2'}
 url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/updatecard/'
-data = {'id':'2', 'title':'OOPS Concepts', 'content':'Abstraction, Encapsulation, Inheritence', 'type':'0', 'tags':['oops','concepts'], 'private':True}
+data = {'id':'100', 'title':'OOPS Concepts', 'content':'Abstraction, Encapsulation, Inheritence', 'type':'0', 'tags':['oops','concepts'], 'private':True}
 #All tags before will be deleted and new sent will be added. Make sure you send the old ones if you want them to be retained
 #type can be 0 or 1, try to send all tags in lowercase and trimmed
 response = requests.post(url,headers=headers,data=json.dumps(data))
@@ -191,7 +192,7 @@ import requests, json
 headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': '0fac37eb-aa6e-4cd4-a15f-5a4d6d9655d2'}
 url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/deletecard/'
 #I created the 1st card again so it got assigned id=2, which i deleted here. the id is returned in getallcards api
-data = {'id':'2'}
+data = {'id':'3'}
 response = requests.post(url,headers=headers,data=json.dumps(data))
 print response.text
 ```
@@ -338,7 +339,8 @@ print response.text
                 "title": "Exceptions&nbsp;", 
                 "type": "0", 
                 "upvotes": "0", 
-                "user_owner": false
+                "user_owner": false,
+                "in_group": false
             }
         ], 
         "status": 200, 
@@ -383,7 +385,8 @@ print response.text
                 "title": "tags", 
                 "type": "0", 
                 "upvotes": "0", 
-                "user_owner": false
+                "user_owner": false,
+                "in_group": false
             }, 
             {
                 "content": "<p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">HTML- Hyper Text Markup language, the mark up formatting language for the web<o:p></o:p></p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\"></p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Language to build web pages (document structure, content presentation). html</p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">HTML5 -&nbsp;<span style=\"width: auto; height: auto; font-family: Calibri, sans-serif; font-size: 11pt;\">similar but the latest version of hypertext Makeup language</span></p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">XML ? extensible markup language, looks like HTML with no predefined tags, to store and to transfer data, XML tags are case sensitive and element must be properly nested<o:p></o:p></p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">JSON(JavaScript Object Notation) ? alternate to XML, a subset of JavaScript programming language lightweight computer data interchangeable format and is language independent data format&nbsp;<o:p></o:p></p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">Why do we need it? &nbsp;Information exchange: separate content from appearance, to store and transfer data, distributing data over the internet<o:p></o:p></p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">JavaScript: scripting language, nothing to do with Java, to interpreted language, scripts are executed without compilation, usually embedded in HTML and add interactivity to HTML pages<o:p></o:p></p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">Roles: HTML is to define the content of web pages<o:p></o:p></p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CSS to specify the layout of the web pages<o:p></o:p></p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; JavaScript to program the behavior of the web pages<o:p></o:p></p><p class=\"MsoNormal\" style=\"margin: 0in 0in 0.0001pt; font-size: 12pt; font-family: Calibri;\">supposed to be easier that everybody can write it</p><div>URI/URL: Uniform resource Identifier</div><div>An \"address\" that is unique &amp; used to identify each</div><div>&nbsp;resource on the web.&nbsp;</div><div>HTTP: Hypertext transfer protocols&nbsp;</div><div>Allows for the retrieval of linked resources from the web. &nbsp;</div><div>CSS: Cascading Style Sheets</div><div>Used to specify the layout of a web page.&nbsp;</div>", 
@@ -456,7 +459,8 @@ print response.text
                 "title": "test update", 
                 "type": "0", 
                 "upvotes": "3", 
-                "user_owner": false
+                "user_owner": false,
+                "in_group": false
             }, 
             {
                 "action": "favorite", 
@@ -486,8 +490,38 @@ print response.text
 }
 ```
 
-2.14 creategroup
-2.15 getallgroups for a user
+2.14 POST http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/creategroup/
+
+import requests, json
+#dont forget to replace the value of X-Authorization-Token you get after login into the header below. Each token is good for 30days
+headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': '0fac37eb-aa6e-4cd4-a15f-5a4d6d9655d2'}
+url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/creategroup/'
+data = {'title':'Java Learners Group'}
+response = requests.post(url,headers=headers,data=json.dumps(data))
+print response.text
+"""
+{
+    "responseData": {
+        "message": "Successfully created group", 
+        "status": 200, 
+        "success": true
+    }
+}
+"""
+
+2.15 GET http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/getgroups/
+
+import requests, json
+#dont forget to replace the value of X-Authorization-Token you get after login into the header below. Each token is good for 30days
+headers = {'content-type':'application/json', 'Origin':['POST','PUT','DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH'], 'X-Authorization-Token': '0fac37eb-aa6e-4cd4-a15f-5a4d6d9655d2'}
+url = 'http://ec2-18-221-144-47.us-east-2.compute.amazonaws.com/cardservice/getgroups/'
+#returns 10 recent feeds across the platform - all card data plus extra parameters timestamp, activity. User owner field to find the name of person who did the activity
+response = requests.get(url,headers=headers)
+print response.text
+
+
+
+
 2.16 delete group
 2.17 getallcards in a group
 2.18 getusers
